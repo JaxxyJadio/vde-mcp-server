@@ -1,0 +1,18 @@
+# Core dependencies for VDE++ MCP Server
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.21.0
+Pillow>=9.0.0
+fastapi>=0.68.0
+pydantic>=1.8.0
+uvicorn>=0.15.0
+
+# MCP protocol support
+mcp>=1.0.0
+
+# Optional but recommended for better edge detection
+opencv-python>=4.5.0
+
+# Development and testing
+pytest>=6.0.0
+requests>=2.25.0

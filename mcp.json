@@ -1,0 +1,30 @@
+{
+    "name": "vde-layout-parser",
+    "version": "0.1.0",
+    "tools": [
+      {
+        "name": "parse_layout",
+        "description": "Parse a raster UI mockup into a split-tree JSON using Vision Diffusion Encoder++.",
+        "input_schema": {
+          "type": "object",
+          "properties": {
+            "image_b64": {"type": "string", "description": "Base64-encoded PNG or JPEG."},
+            "snr_db": {"type": "number", "default": -4.5, "description": "Target SNR in dB for diffusion forward pass (≈ t 300–500)."},
+            "add_noise": {"type": "boolean", "default": true, "description": "If true, forward-diffuse before encoding."},
+            "return_edges": {"type": "boolean", "default": true, "description": "Return edge mask as base64 PNG."}
+          },
+          "required": ["image_b64"]
+        },
+        "output_schema": {
+          "type": "object",
+          "properties": {
+            "layout": {"type": "object", "description": "Split-tree layout JSON."},
+            "edges_b64": {"type": "string", "description": "Edge mask PNG as base64.", "nullable": true},
+            "snr_db": {"type": "number"}
+          },
+          "required": ["layout", "snr_db"]
+        }
+      }
+    ]
+  }
+  

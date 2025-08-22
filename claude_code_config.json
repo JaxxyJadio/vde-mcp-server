@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "vde-layout-parser": {
+      "command": "python",
+      "args": ["C:/Jadio/vde-server/mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "C:/Jadio/vde-server"
+      }
+    }
+  }
+}
